@@ -17,5 +17,11 @@
         "jsx": "react-jsx",
         "baseUrl": "src"
     },
-    "include": ["src"]
+    "include": [
+        "src",
+        "src/index.tsx",
+        "src/App.tsx",
+        "src/App.styled.ts",
+        "src/react-app-env.d.ts"
+    ]
 }

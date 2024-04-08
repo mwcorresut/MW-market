@@ -1,6 +1,7 @@
 // ключь авторизации
 export const pathsPublic: { [k: string]: string } = {
     home: "/",
+    productPage: "/product/:idOrSlug", // либо uuid сделать
 };
 // ключь авторизации
 export const pathsPrivate: { [k: string]: string } = {

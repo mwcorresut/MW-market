@@ -1,17 +1,25 @@
 import { Suspense } from "react";
-// import HomePage from "pages/HomePage";
 
 import PublicRoutes from "routes/PublicRoutes";
 import PrivateRoutes from "routes/PrivateRoutes";
-
-// import AccountSettingPage from "pages/AccountSettingPage/AccountSettingPage";
+import Header from "features/Header";
+import { AppStyles, Footer } from "./App.styled";
 
 const App = () => {
     return (
-        <Suspense fallback={"Loading..."}>
-            <PublicRoutes />
-            <PrivateRoutes />
-        </Suspense>
+        <>
+            <AppStyles />
+
+            <Header />
+
+            <Suspense fallback={"Loading..."}>
+                <PublicRoutes />
+                <PrivateRoutes />
+            </Suspense>
+            <Footer>
+                <div>Marketplace MW</div>
+            </Footer>
+        </>
     );
 };
 
