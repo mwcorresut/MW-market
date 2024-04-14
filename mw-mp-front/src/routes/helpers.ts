@@ -8,8 +8,6 @@ export const pathsPrivate: { [k: string]: string } = {
     accountSetting: "/account-setting",
 };
 
-//  тут лежит объект с ключем строка и значением строка
-
 export const paths: { [k: string]: string } = Object.assign(
     {},
     pathsPublic,

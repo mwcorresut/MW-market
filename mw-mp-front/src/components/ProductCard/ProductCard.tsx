@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Button } from "../components/Button";
+import Button from "../Button/Button";
 
-import { ReactComponent as HeartEmpty } from "img/heart-empty.svg";
+import like from "img/Likes/like.svg";
 
 import {
     Wrapper,
@@ -14,6 +14,7 @@ import {
     Title,
     Description,
 } from "./styled";
+// import { useCallback } from "react";
 
 interface ProductCardProps {
     id: number;
@@ -27,12 +28,39 @@ interface ProductCardProps {
     hideLike?: boolean;
 }
 
-const ProductCard: React.FC = () => {
+const ProductCard: React.FC<ProductCardProps> = ({
+    id,
+    slug,
+    img,
+    priceRegular,
+    priceDiscount,
+    title,
+    description,
+    // isLiked,
+    hideLike,
+}) => {
+    // Добавляем\убираем из избранного
+
+    // const dispatch = useDispatch();
+
+    // const handleFavorites = useCallback(
+    //     (e: React.MouseEvent<HTMLElement>) => {
+    //         const { productId } = e.currentTarget.dataset;
+
+    //         dispatch(
+    //             !isLiked
+    //                 ? addToFavorites(+productId!)
+    //                 : removeFromFavorites(+productId!)
+    //         );
+    //     },
+    //     [dispatch, isLiked]
+    // );
+
     return (
         <Wrapper>
             {!hideLike && (
                 <LikeWrapper data-product-id={id}>
-                    <HeartEmpty />
+                    <img src={like} alt="Like" />
                 </LikeWrapper>
             )}
 
@@ -44,12 +72,9 @@ const ProductCard: React.FC = () => {
                 {Number.isInteger(priceDiscount) ? (
                     <>
                         {/* цена со скидкой*/}
-                        <PriceDiscounted>
-                            {priceDiscount} P
-                        </PriceDiscounted>{" "}
+                        <PriceDiscounted>{priceDiscount} P</PriceDiscounted>
                         {/* обычная цена перечеркнута*/}
                         <PriceRegualWhenDiscounted>
-                            {" "}
                             {priceRegular} P
                         </PriceRegualWhenDiscounted>
                     </>

@@ -17,15 +17,14 @@ export const PriceWrapper = styled.div`
 
 export const LikeWrapper = styled.div`
     cursor: pointer;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     position: absolute;
-    top: 0;
-    right: 0;
+    /* top: 0; */
+    right: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-
     svg {
         pointer-events: none; // выключаю события курсора, могу провалится сквозь значок лайка до блока
     }
@@ -53,4 +52,19 @@ export const PriceDiscounted = styled.div`
 
 export const Title = styled.h3`
     margin-bottom: 5px;
+`;
+
+export const Description = styled.div`
+    display: flex;
+`;
+
+export const Wrapper = styled.div`
+    flex: 0 1 18%;
+    border: 1px solid ${colors.primary};
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+    position: relative;
+    margin: 5px;
 `;
