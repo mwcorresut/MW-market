@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { reducers } from "./reducers";
+import reducers from "./reducers";
 
-const store = configureStore({ // добававляем объект хранилища store
-    reducer: reducers;
+const store = configureStore({
+    // добававляем объект хранилища store
+    reducer: reducers,
 });
 
-export default store
+export default store;
